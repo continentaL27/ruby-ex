@@ -4,13 +4,19 @@
     <% 
         @articles.each do |article| # evaluate ruby code
         %>  
-        <li>
-        <%= 
-            article.title  # evaluate ruby code and return value  
-        %>, <br> 
-        <span>       
-            <%= article.body %>
-        </span>
-        </li>
+    
+            <li>
+                <%= link_to article.title, article %>   
+                <!--<a href="<%= article_path(article)%>"><%= 
+                    article.title  # evaluate ruby code and return value  
+                %>,
+                </a>-->
+            <br>
+            
+            <span>       
+                <%= article.body %>
+            </span>
+            </li>
     <% end %>
 </ul>
+<%= link_to "New Article", new_article_path %>
